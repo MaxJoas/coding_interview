@@ -18,7 +18,10 @@ def is_prime(i, primes):
         is_prime - (bool) boolean that indicates if a number is prime
 
     """
-    pass
+    for prime in primes:
+        if(i % prime == 0):
+            return False
+    return True
 
 
 def find_first_n_primes(n):
@@ -31,7 +34,14 @@ def find_first_n_primes(n):
         primes - (set) set of first n prime numbers
 
     """
-    pass
+    primes = [1]
+    toCheck = 2
+    while(len(primes <= n):
+        if(is_prime(toCheck, primes)):
+            primes.append(toCheck)
+        toCheck += 1
+    return primes
+
 
 
 if __name__ == '__main__':
