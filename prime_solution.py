@@ -9,16 +9,16 @@ def is_prime(i, primes):
 
     Args:
         i - (int) number to check if it is prime.
-        primes - (set) set of already found prime numbers
+        primes - (list) set of already found prime numbers
 
     Returns:
         is_prime - (bool) boolean that indicates if a number is prime
 
     """
     is_prime = False
-    for prime in primes:
-        if np.sqrt(prime) >= i:
-            break
+    for prime in list(primes):
+        if np.sqrt(i) < prime:
+            return not is_prime
         if not (i == prime or i % prime):
             return is_prime
     return not is_prime
@@ -34,16 +34,18 @@ def find_first_n_primes(n):
         primes - (set) set of first n prime numbers
 
     """
-    primes = set([2])
+    primes = []
     to_check = 2
 
     while len(primes) < n:
         if is_prime(to_check, primes):
-            primes.add(to_check)
+            primes.append(to_check)
         to_check += 1
     print('The first {} prime numbers are: {}'.format(n, primes))
-    return primes
+    return set(primes)
 
+
+find_first_n_primes(10)
 
 if __name__ == '__main__':
     print('maine')
