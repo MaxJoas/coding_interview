@@ -18,7 +18,7 @@ def is_prime(i, primes):
     is_prime = False
     for prime in primes:
         if np.sqrt(prime) >= i:
-            return is_prime
+            break
         if not (i == prime or i % prime):
             return is_prime
     return not is_prime
