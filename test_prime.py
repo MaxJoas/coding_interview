@@ -1,5 +1,5 @@
 import pandas as pd
-from prime import find_first_n_primes
+from prime_solution import find_first_n_primes
 
 df = pd.read_csv('./primes1000.csv')
 primes = df['prime(n)']
